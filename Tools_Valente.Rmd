@@ -1,0 +1,30 @@
+---
+title: "Tools7970"
+output: html_notebook
+---
+
+
+### Week 2 - R Notebook Discussion
+
+
+```{r}
+library(tidyverse)
+library(lubridate)
+
+classes = data.frame('date' = c(date('2023-08-30'), rep(NA, 13)),
+                     'Section' = c(rep('Responsible science', 4), rep('Data & analysis', 3), rep('Modern publishing', 3), rep('You and your science', 4)),
+                     'topic' = c('Artificial intelligence', 'Underrepresentation and the leaky pipeline', 'Open science and reproducibility crisis', 'Funding sources and bias',
+                                 'Citizen science/data', 'Shiny tools', 'Data mining & hypotheses',
+                                 'Predatory journals / pay to publish', 'Pre-registration', 'Pros and cons of blinding reviews',
+                                 'Mental health for scientists', 'Science communication', 'THANKSGIVING WEEK', 'Prepping for the job market'),
+                     'presenter' = c(rep(NA, 13), 'Ani/Jonathon'))
+for(i in 2:14){
+  classes$date[i] = classes$date[i-1] + 7
+}
+
+# classes$presenter[1:12] = sample(c("Sydney", "Natalie", "Diego", "Maria", "Monet", "Abel", "Basanta", "Swati", "Travis", "Tristan", "Nicole", "Mars"), 12)
+
+classes
+
+```
+
